@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>Welcome to the Home Page</h1>
+
+    <% if Information.count == 0 %>
+      <%= link_to "Import Data", information_import_custom_data_path, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Delete Previously Imported Data", information_delete_information_path, class: "btn btn-primary" %>
+    <% end %>
+  </body>
+</html>

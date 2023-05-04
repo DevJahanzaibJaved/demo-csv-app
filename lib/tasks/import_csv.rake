@@ -5,14 +5,6 @@ namespace :import do
     
     file_path = Rails.root.join('public', 'csv', 'test-file.csv')
 
-    # CSV.foreach(file_path, headers: true) do |row|
-    #   # Access row data here
-    #   row_data = row.to_hash
-    #   # Process row data here
-    #   debugger
-    #   puts "Row data: #{row_data}"
-    # end
-
     CSV.foreach(file_path, headers: true) do |row|
       # Access row data here
       row_data = row.to_hash
@@ -27,7 +19,7 @@ namespace :import do
         account: row_data['Konto'],
         contra_account: row_data['Gegenkonto (ohne BU-Schl�ssel)'],
         posting_key: row_data['BU-Schl�ssel'],
-        receipt_date: Date.parse(row_data['Belegdatum']),
+        receipt_date: row_data['Belegdatum'],
         document_field_1: row_data['Belegfeld 1'],
         document_field_2: row_data['Belegfeld 2'],
         discount: row_data['Skonto'],
@@ -48,8 +40,8 @@ namespace :import do
         receipt_info_content_4: row_data['Beleginfo - Inhalt 4'],
         receipt_info_type_5: row_data['Beleginfo - Art 5'],
         receipt_info_content_5: row_data['Beleginfo - Inhalt 5'],
-        receipt_info_type_6: row_data['receipt_info_type_6'],
-        receipt_info_content_6: row_data['Beleginfo - Art 6'],
+        receipt_info_type_6: row_data['Beleginfo - Art 6'],
+        receipt_info_content_6: row_data['Beleginfo - Inhalt 6'],
         receipt_info_type_7: row_data['Beleginfo - Art 7'],
         receipt_info_content_7: row_data['Beleginfo - Inhalt 7'],
         receipt_info_type_8: row_data['Beleginfo - Art 8'],
@@ -106,7 +98,7 @@ namespace :import do
         additional_information_art_20: row_data['Zusatzinformation - Art 20'],
         additional_information_content_20: row_data['Zusatzinformation- Inhalt 20'],
         piece: row_data['St�ck'],
-        Weight: row_data['Gewicht'],
+        weight: row_data['Gewicht'],
         payment_method: row_data['Zahlweise'],
         claim_type: row_data['Forderungsart'],
         assessment_year: row_data['Veranlagungsjahr'],
@@ -141,8 +133,11 @@ namespace :import do
         billing_reference: row_data['Abrechnungsreferenz'],
         bvv_position: row_data['BVV-Position'],
         eu_country_vat_id_origin: row_data['EU-Land u. UStID (Ursprung)'],
-        eu_tax_rate_origin: row_data['EU-Steuersatz (Ursprung)'])_
+        eu_tax_rate_origin: row_data['EU-Steuersatz (Ursprung)'])
 
+      #Save record in database
+      info.save!
+    end
     puts "Import finished!"
   end
 end

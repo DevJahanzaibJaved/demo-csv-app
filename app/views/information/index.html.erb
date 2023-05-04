@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Information Page</title>
+  </head>
+  <body>
+  <% if @informations.present? %>
+    <h1>This is information imported from file</h1>
+    <h1>Information Table</h1>
+
+    <table style="border: 1px solid black;">
+      <!-- commented out head
+      <thead>
+          <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          </tr>
+      </thead>
+      --!>
+      <tbody>
+
+      <!-- Style for Table --!>
+      <style>
+        table {
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 10px;
+        }
+      </style>
+      
+          <% @informations.each do |information| %>
+          <tr>
+              <td><%= information.id.present? ? information.id : "-" %></td>
+              <td><%= information.turnover.present? ? information.turnover : "-" %></td>
+              <td><%= information.debit_credit_indicator.present? ? information.debit_credit_indicator : "-" %></td>
+              <td><%= information.currency.present? ? information.currency : "-" %></td>
+              <td><%= information.exchange_rate.present? ? information.exchange_rate : "-" %></td>
+              <td><%= information.base_turnover.present? ? information.base_turnover : "-" %></td>
+              <td><%= information.currency_base_turnover.present? ? information.currency_base_turnover : "-" %></td>
+              <td><%= information.account.present? ? information.account : "-" %></td>
+              <td><%= information.contra_account.present? ? information.contra_account : "-" %></td>
+              <td><%= information.posting_key.present? ? information.posting_key : "-" %></td>
+              <td><%= information.receipt_date.present? ? information.receipt_date : "-" %></td>
+              <td><%= information.document_field_1.present? ? information.document_field_1 : "-" %></td>
+              <td><%= information.document_field_2.present? ? information.document_field_2 : "-" %></td>
+              <td><%= information.discount.present? ? information.discount : "-" %></td>
+              <td><%= information.booking_text.present? ? information.booking_text : "-" %></td>
+              <td><%= information.post_lock.present? ? information.post_lock : "-" %></td>
+              <td><%= information.various_address_numbers.present? ? information.various_address_numbers : "-" %></td>
+              <td><%= information.business_partner_bank.present? ? information.business_partner_bank : "-" %></td>
+              <td><%= information.facts.present? ? information.facts : "-" %></td>
+              <td><%= information.interest_lock.present? ? information.interest_lock : "-" %></td>
+              <td><%= information.document_link.present? ? information.document_link : "-" %></td>
+              <td><%= information.receipt_info_type_1.present? ? information.receipt_info_type_1 : "-" %></td>
+              <td><%= information.receipt_info_content_1.present? ? information.receipt_info_content_1 : "-" %></td>
+              <td><%= information.receipt_info_type_2.present? ? information.receipt_info_type_2 : "-" %></td>
+              <td><%= information.receipt_info_content_2.present? ? information.receipt_info_content_2 : "-" %></td>
+              <td><%= information.receipt_info_type_3.present? ? information.receipt_info_type_3 : "-" %></td>
+              <td><%= information.receipt_info_content_3.present? ? information.receipt_info_content_3 : "-" %></td>
+              <td><%= information.receipt_info_type_4.present? ? information.receipt_info_type_4 : "-" %></td>
+              <td><%= information.receipt_info_content_4.present? ? information.receipt_info_content_4 : "-" %></td>
+              <td><%= information.receipt_info_type_5.present? ? information.receipt_info_type_5 : "-" %></td>
+              <td><%= information.receipt_info_content_5.present? ? information.receipt_info_content_5 : "-" %></td>
+              <td><%= information.receipt_info_type_6.present? ? information.receipt_info_type_6 : "-" %></td>
+              <td><%= information.receipt_info_content_6.present? ? information.receipt_info_content_6 : "-" %></td>
+              <td><%= information.receipt_info_type_7.present? ? information.receipt_info_type_7 : "-" %></td>
+              <td><%= information.receipt_info_content_7.present? ? information.receipt_info_content_7 : "-" %></td>
+              <td><%= information.receipt_info_type_8.present? ? information.receipt_info_type_8 : "-" %></td>
+              <td><%= information.receipt_info_content_8.present? ? information.receipt_info_content_8 : "-" %></td>
+              <td><%= information.cost_center_1.present? ? information.cost_center_1 : "-" %></td>
+              <td><%= information.cost_center_2.present? ? information.cost_center_2 : "-" %></td>
+              <td><%= information.food_amount.present? ? information.food_amount : "-"  %></td>
+              <td><%= information.eu_tax_id.present? ? information.eu_tax_id : "-"  %></td>
+              <td><%= information.eu_tax_rate.present? ? information.eu_tax_rate : "-"  %></td>
+              <td><%= information.different_tax_type.present? ? information.different_tax_type : "-"  %></td>
+              <td><%= information.set_of_facts_l_l.present? ? information.set_of_facts_l_l : "-"  %></td>
+              <td><%= information.functional_addition_l_l.present? ? information.functional_addition_l_l : "-"  %></td>
+              <td><%= information.main_function_type.present? ? information.main_function_type : "-"  %></td>
+              <td><%= information.main_function_number.present? ? information.main_function_number : "-"  %></td>
+              <td><%= information.function_supplement.present? ? information.function_supplement : "-"  %></td>
+              <td><%= information.additional_information_art_1.present? ? information.additional_information_art_1 : "-"  %></td>
+              <td><%= information.additional_information_content_1.present? ? information.additional_information_content_1 : "-"  %></td>
+              <td><%= information.additional_information_art_2.present? ? information.additional_information_art_2 : "-"  %></td>
+              <td><%= information.additional_information_content_2.present? ? information.additional_information_content_2 : "-"  %></td>
+              <td><%= information.additional_information_art_3.present? ? information.additional_information_art_3 : "-"  %></td>
+              <td><%= information.additional_information_content_3.present? ? information.additional_information_content_3 : "-"  %></td>
+              <td><%= information.additional_information_art_4.present? ? information.additional_information_art_4 : "-"  %></td>
+              <td><%= information.additional_information_content_4.present? ? information.additional_information_content_4 : "-"  %></td>
+              <td><%= information.additional_information_art_5.present? ? information.additional_information_art_5 : "-"  %></td>
+              <td><%= information.additional_information_content_5.present? ? information.additional_information_content_5 : "-"  %></td>
+              <td><%= information.additional_information_art_6.present? ? information.additional_information_art_6 : "-"   %></td>
+              <td><%= information.additional_information_content_6.present? ? information.additional_information_content_6 : "-"   %></td>
+              <td><%= information.additional_information_art_7.present? ? information.additional_information_art_7 : "-"   %></td>
+              <td><%= information.additional_information_content_7.present? ? information.additional_information_content_7 : "-"   %></td>
+              <td><%= information.additional_information_art_8.present? ? information.additional_information_art_8 : "-"   %></td>
+              <td><%= information.additional_information_content_8.present? ? information.additional_information_content_8 : "-"   %></td>
+              <td><%= information.additional_information_art_9.present? ? information.additional_information_art_9 : "-"   %></td>
+              <td><%= information.additional_information_content_9.present? ? information.additional_information_content_9 : "-"   %></td>
+              <td><%= information.additional_information_art_10.present? ? information.additional_information_art_10 : "-"   %></td>
+              <td><%= information.additional_information_content_10.present? ? information.additional_information_content_10 : "-"   %></td>
+              <td><%= information.additional_information_art_11.present? ? information.additional_information_art_11 : "-"   %></td>
+              <td><%= information.additional_information_content_11.present? ? information.additional_information_content_11 : "-"   %></td>
+              <td><%= information.additional_information_art_12.present? ? information.additional_information_art_12 : "-"   %></td>
+              <td><%= information.additional_information_content_12.present? ? information.additional_information_content_12 : "-"   %></td>
+              <td><%= information.additional_information_art_13.present? ? information.additional_information_art_13 : "-"   %></td>
+              <td><%= information.additional_information_content_13.present? ? information.additional_information_content_13 : "-"   %></td>
+              <td><%= information.additional_information_art_14.present? ? information.additional_information_art_14 : "-"   %></td>
+              <td><%= information.additional_information_content_14.present? ? information.additional_information_content_14 : "-"   %></td>
+              <td><%= information.additional_information_art_15.present? ? information.additional_information_art_15 : "-"   %></td>
+              <td><%= information.additional_information_content_15.present? ? information.additional_information_content_15 : "-"  %></td>
+              <td><%= information.additional_information_art_16.present? ? information.additional_information_art_16 : "-"   %></td>
+              <td><%= information.additional_information_content_16.present? ? information.additional_information_content_16 : "-"   %></td>
+              <td><%= information.additional_information_art_17.present? ? information.additional_information_art_17 : "-"   %></td>
+              <td><%= information.additional_information_content_17.present? ? information.additional_information_content_17 : "-"   %></td>
+              <td><%= information.additional_information_art_18.present? ? information.additional_information_art_18 : "-"   %></td>
+              <td><%= information.additional_information_content_18.present? ? information.additional_information_content_18 : "-"  %></td>
+              <td><%= information.additional_information_art_19.present? ? information.additional_information_art_19 : "-"   %></td>
+              <td><%= information.additional_information_content_19.present? ? information.additional_information_content_19 : "-"   %></td>
+              <td><%= information.additional_information_art_20.present? ? information.additional_information_art_20 : "-"   %></td>
+              <td><%= information.additional_information_content_20.present? ? information.additional_information_content_20 : "-"   %></td>
+              <td><%= information.piece.present? ? information.piece : "-"   %></td>
+              <td><%= information.weight.present? ? information.weight : "-" %></td>
+              <td><%= information.payment_method.present? ? information.payment_method : "-"  %></td>
+              <td><%= information.claim_type.present? ? information.claim_type : "-"  %></td>
+              <td><%= information.assessment_year.present? ? information.assessment_year : "-"  %></td>
+              <td><%= information.associated_maturity.present? ? information.associated_maturity : "-"  %></td>
+              <td><%= information.discount_type.present? ? information.discount_type : "-"  %></td>
+              <td><%= information.order_number.present? ? information.order_number : "-"  %></td>
+              <td><%= information.deposit_booking_type.present? ? information.deposit_booking_type : "-"  %></td>
+              <td><%= information.deposit_vat_key.present? ? information.deposit_vat_key : "-"  %></td>
+              <td><%= information.deposit_eu_country.present? ? information.deposit_eu_country : "-"  %></td>
+              <td><%= information.down_payments_facts_l_l.present? ? information.down_payments_facts_l_l : "-"  %></td>
+              <td><%= information.eu_tax_rate_down_payment.present? ? information.eu_tax_rate_down_payment : "-"  %></td>
+              <td><%= information.down_payment_proceeds_account.present? ? information.down_payment_proceeds_account : "-"  %></td>
+              <td><%= information.origin.present? ? information.origin : "-"  %></td>
+              <td><%= information.booking_guid.present? ? information.booking_guid : "-"  %></td>
+              <td><%= information.kost_date.present? ? information.kost_date : "-"  %></td>
+              <td><%= information.sepa_mandate_reference.present? ? information.sepa_mandate_reference : "-"  %></td>
+              <td><%= information.cash_discount_lock.present? ? information.cash_discount_lock : "-" %></td>
+              <td><%= information.shareholder_name.present? ? information.shareholder_name : "-" %></td>
+              <td><%= information.party_number.present? ? information.party_number : "-" %></td>
+              <td><%= information.identification_number.present? ? information.identification_number : "-" %></td>
+              <td><%= information.drafter_number.present? ? information.drafter_number : "-" %></td>
+              <td><%= information.post_freeze_until.present? ? information.post_freeze_until : "-" %></td>
+              <td><%= information.designation_sobil_facts.present? ? information.designation_sobil_facts : "-" %></td>
+              <td><%= information.indicator_sobil_posting.present? ? information.indicator_sobil_posting : "-" %></td>
+              <td><%= information.fixation.present? ? information.fixation : "-" %></td>
+              <td><%= information.performance_date.present? ? information.performance_date : "-" %></td>
+              <td><%= information.date_assignment_tax_period.present? ? information.date_assignment_tax_period : "-" %></td>
+              <td><%= information.maturity.present? ? information.maturity : "-" %></td>
+              <td><%= information.general_reversal.present? ? information.general_reversal : "-" %></td>
+              <td><%= information.tax_rate.present? ? information.tax_rate : "-" %></td>
+              <td><%= information.country.present? ? information.country : "-" %></td>
+              <td><%= information.billing_reference.present? ? information.billing_reference : "-" %></td>
+              <td><%= information.bvv_position.present? ? information.bvv_position : "-" %></td>
+              <td><%= information.eu_country_vat_id_origin.present? ? information.eu_country_vat_id_origin : "-" %></td>
+              <td><%= information.eu_tax_rate_origin.present? ? information.eu_tax_rate_origin : "-" %></td>
+              <td><%= information.created_at  %></td>
+              <td><%= information.updated_at %></td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      <h4>No Information available!</h4>    
+    <% end %>
+  </body>
+</html>

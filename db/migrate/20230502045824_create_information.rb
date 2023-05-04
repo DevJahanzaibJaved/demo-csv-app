@@ -10,7 +10,7 @@ class CreateInformation < ActiveRecord::Migration[7.0]
       t.integer :account
       t.integer :contra_account
       t.integer :posting_key
-      t.date :receipt_date
+      t.string :receipt_date
       t.integer :document_field_1
       t.integer :document_field_2
       t.decimal :discount
@@ -89,7 +89,7 @@ class CreateInformation < ActiveRecord::Migration[7.0]
       t.decimal :additional_information_art_20, precision: 8, scale: 2, default: "0.0"
       t.string :additional_information_content_20
       t.string :piece
-      t.string :Weight
+      t.string :weight
       t.string :payment_method
       t.string :claim_type
       t.string :assessment_year
@@ -115,7 +115,7 @@ class CreateInformation < ActiveRecord::Migration[7.0]
       t.string :designation_sobil_facts
       t.string :indicator_sobil_posting
       t.string :fixation
-      t.date :performance_date
+      t.string :performance_date
       t.string :date_assignment_tax_period
       t.string :maturity
       t.string :general_reversal
