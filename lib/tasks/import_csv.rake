@@ -3,9 +3,11 @@ namespace :import do
   task custom_data: :environment do
     require 'csv'
     
-    file_path = Rails.root.join('public', 'csv', 'test-file.csv')
+    # file_path = Rails.root.join('public', 'csv', 'test-file.csv')
+    # file_path = Rails.root.join('public', 'csv', 'EXTF_Buchungsstapel_20230131_135609.csv')
+    file_path = Rails.root.join('public', 'csv', 'EXTF_Buchungsstapel_20230131_135609_002.csv')
 
-    CSV.foreach(file_path, headers: true) do |row|
+    CSV.foreach(file_path, headers: true, liberal_parsing: true, col_sep: ';') do |row|
       # Access row data here
       row_data = row.to_hash
       # Process row data here
