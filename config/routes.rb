@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
-  get 'information/import_custom_data'
+  post 'information/import_custom_data'
   get 'information/index'
   get 'information/delete_information'
 

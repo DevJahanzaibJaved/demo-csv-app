@@ -9,15 +9,136 @@
     <h1>Information Table</h1>
 
     <table style="border: 1px solid black;">
-      <!-- commented out head
       <thead>
           <tr>
           <th>ID</th>
-          <th>Title</th>
-          <th>Description</th>
+          <th>Umsatz (ohne Soll/Haben-Kz)</th>
+          <th>Soll/Haben-Kennzeichen</th>
+          <th>WKZ Umsatz</th>
+          <th>Kurs</th>
+          <th>Basis-Umsatz</th>
+          <th>WKZ Basis-Umsatz</th>
+          <th>Konto</th>
+          <th>Gegenkonto (ohne BU-Schl�ssel)</th>
+          <th>BU-Schl�ssel</th>
+          <th>Belegdatum</th>
+          <th>Belegfeld 1</th>
+          <th>Belegfeld 2</th>
+          <th>Skonto</th>
+          <th>Buchungstext</th>
+          <th>Postensperre</th>
+          <th>Diverse Adressnummer</th>
+          <th>Gesch�ftspartnerbank</th>
+          <th>Sachverhalt</th>
+          <th>Zinssperre</th>
+          <th>Beleglink</th>
+          <th>Beleginfo - Art 1</th>
+          <th>Beleginfo - Inhalt 1</th>
+          <th>Beleginfo - Art 2</th>
+          <th>Beleginfo - Inhalt 2</th>
+          <th>Beleginfo - Art 3</th>
+          <th>Beleginfo - Inhalt 3</th>
+          <th>Beleginfo - Art 4</th>
+          <th>Beleginfo - Inhalt 4</th>
+          <th>Beleginfo - Art 5</th>
+          <th>Beleginfo - Inhalt 5</th>
+          <th>Beleginfo - Art 6</th>
+          <th>Beleginfo - Inhalt 6</th>
+          <th>Beleginfo - Art 7</th>
+          <th>Beleginfo - Inhalt 7</th>
+          <th>Beleginfo - Art 8</th>
+          <th>Beleginfo - Inhalt 8</th>
+          <th>KOST1 - Kostenstelle</th>
+          <th>KOST2 - Kostenstelle</th>
+          <th>Kost-Menge</th>
+          <th>EU-Land u. UStID (Bestimmung)</th>
+          <th>EU-Steuersatz (Bestimmung)</th>
+          <th>Abw. Versteuerungsart</th>
+          <th>Sachverhalt L+L</th>
+          <th>Funktionserg�nzung L+L</th>
+          <th>BU 49 Hauptfunktionstyp</th>
+          <th>BU 49 Hauptfunktionsnummer</th>
+          <th>BU 49 Funktionserg�nzung</th>
+          <th>Zusatzinformation - Art 1</th>
+          <th>Zusatzinformation- Inhalt 1</th>
+          <th>Zusatzinformation - Art 2</th>
+          <th>Zusatzinformation- Inhalt 2</th>
+          <th>Zusatzinformation - Art 3</th>
+          <th>Zusatzinformation- Inhalt 3</th>
+          <th>Zusatzinformation - Art 4</th>
+          <th>Zusatzinformation- Inhalt 4</th>
+          <th>Zusatzinformation - Art 5</th>
+          <th>Zusatzinformation- Inhalt 5</th>
+          <th>Zusatzinformation - Art 6</th>
+          <th>Zusatzinformation- Inhalt 6</th>
+          <th>Zusatzinformation - Art 7</th>
+          <th>Zusatzinformation- Inhalt 7</th>
+          <th>Zusatzinformation - Art 8</th>
+          <th>Zusatzinformation- Inhalt 8</th>
+          <th>Zusatzinformation - Art 9</th>
+          <th>Zusatzinformation- Inhalt 9</th>
+          <th>Zusatzinformation - Art 10</th>
+          <th>Zusatzinformation- Inhalt 10</th>
+          <th>Zusatzinformation - Art 11</th>
+          <th>Zusatzinformation- Inhalt 11</th>
+          <th>Zusatzinformation - Art 12</th>
+          <th>Zusatzinformation- Inhalt 12</th>
+          <th>Zusatzinformation - Art 13</th>
+          <th>Zusatzinformation- Inhalt 13</th>
+          <th>Zusatzinformation - Art 14</th>
+          <th>Zusatzinformation- Inhalt 14</th>
+          <th>Zusatzinformation - Art 15</th>
+          <th>Zusatzinformation- Inhalt 15</th>
+          <th>Zusatzinformation - Art 16</th>
+          <th>Zusatzinformation- Inhalt 16</th>
+          <th>Zusatzinformation - Art 17</th>
+          <th>Zusatzinformation- Inhalt 17</th>
+          <th>Zusatzinformation - Art 18</th>
+          <th>Zusatzinformation- Inhalt 18</th>
+          <th>Zusatzinformation - Art 19</th>
+          <th>Zusatzinformation- Inhalt 19</th>
+          <th>Zusatzinformation - Art 20</th>
+          <th>Zusatzinformation- Inhalt 20</th>
+          <th>St�ck</th>
+          <th>Gewicht</th>
+          <th>Zahlweise</th>
+          <th>Forderungsart</th>
+          <th>Veranlagungsjahr</th>
+          <th>Zugeordnete</th>
+          <th>F�lligkeit</th>
+          <th>Skontotyp</th>
+          <th>Auftragsnummer</th>
+          <th>Buchungstyp (Anzahlungen)</th>
+          <th>USt-Schl�ssel (Anzahlungen)</th>
+          <th>EU-Land (Anzahlungen)</th>
+          <th>Sachverhalt L+L (Anzahlungen)</th>
+          <th>EU-Steuersatz (Anzahlungen)</th>
+          <th>Erl�skonto (Anzahlungen)</th>
+          <th>Herkunft-Kz</th>
+          <th>Buchungs GUID</th>
+          <th>KOST-Datum</th>
+          <th>SEPA-Mandatsreferenz</th>
+          <th>Skontosperre</th>
+          <th>Gesellschaftername</th>
+          <th>Beteiligtennummer</th>
+          <th>Identifikationsnummer</th>
+          <th>Zeichnernummer</th>
+          <th>Postensperre bis</th>
+          <th>Bezeichnung SoBil-Sachverhalt</th>
+          <th>Kennzeichen SoBil-Buchung</th>
+          <th>Festschreibung</th>
+          <th>Leistungsdatum</th>
+          <th>Datum Zuord. Steuerperiode</th>
+          <th>F�lligkeit</th>
+          <th>Generalumkehr (GU)</th>
+          <th>Steuersatz</th>
+          <th>Land</th>
+          <th>Abrechnungsreferenz</th>
+          <th>BVV-Position</th>
+          <th>EU-Land u. UStID (Ursprung)</th>
+          <th>EU-Steuersatz (Ursprung)</th>
           </tr>
       </thead>
-      --!>
       <tbody>
 
       <!-- Style for Table --!>

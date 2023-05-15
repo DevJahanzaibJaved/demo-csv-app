@@ -1,15 +1,15 @@
 namespace :import do
   desc "Import data from CSV file"
-  task custom_data: :environment do
+  task :import_csv, [:name] => :environment do |_, args|  
     require 'csv'
-    
-    # file_path = Rails.root.join('public', 'csv', 'test-file.csv')
-    # file_path = Rails.root.join('public', 'csv', 'EXTF_Buchungsstapel_20230131_135609.csv')
-    file_path = Rails.root.join('public', 'csv', 'EXTF_Buchungsstapel_20230131_135609_002.csv')
+    file_name = args[:name]
+    file_path = Rails.root.join('tmp', 'uploads', "#{file_name}")
+    debugger
 
-    CSV.foreach(file_path, headers: true, liberal_parsing: true, col_sep: ';') do |row|
+    CSV.foreach(file_path, headers: true) do |row|
       # Access row data here
       row_data = row.to_hash
+      debugger
       # Process row data here
       info = Information.new(
         turnover: row_data['Umsatz (ohne Soll/Haben-Kz)'],
