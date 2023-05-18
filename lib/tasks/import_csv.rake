@@ -4,12 +4,10 @@ namespace :import do
     require 'csv'
     file_name = args[:name]
     file_path = Rails.root.join('tmp', 'uploads', "#{file_name}")
-    debugger
 
     CSV.foreach(file_path, headers: true) do |row|
       # Access row data here
       row_data = row.to_hash
-      debugger
       # Process row data here
       info = Information.new(
         turnover: row_data['Umsatz (ohne Soll/Haben-Kz)'],
