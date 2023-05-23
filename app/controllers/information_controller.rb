@@ -1,5 +1,3 @@
-# require 'rake'
-
 class InformationController < ApplicationController
   def import_custom_data
 
